@@ -1,1 +1,165 @@
 /* Other rules */
+
+/* HEADER */
+
+.header {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+  top: 0;
+  z-index: 1000;
+}
+header {
+  display: flex;
+  height: 55px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 30px;
+}
+
+header input {
+  width: 45%;
+  height: 30px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  border: none;
+  padding-left: 20px;
+}
+
+header button:not(:last-child) {
+  background-color: #fff;
+  border: solid 2px #2db0ba;
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  color: #2db0ba;
+  font-weight: bold;
+}
+
+header button:last-child {
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  width: 130px;
+  background-color: #2db0ba;
+  color: #fff;
+}
+
+.container-header {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+/* HERO */
+
+.hero {
+  margin-top: 75px;
+  position: relative;
+}
+
+.div-hero-img {
+  height: 450px;
+  width: 100%;
+}
+
+.hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero div:last-child {
+  position: absolute;
+  height: 55%;
+  background-color: #fff;
+  width: 400px;
+  top: 92px;
+  left: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero p {
+  font-size: 34px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  width: 200px;
+  margin-left: 30px;
+  border-radius: 5px;
+  background-color: #2db0ba;
+  color: #fff;
+  height: 40px;
+  border: none;
+}
+
+/* MAIN */
+
+main {
+  margin-top: 40px;
+}
+
+.offers {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.offer {
+  width: calc(20% - (40px) / 5);
+  margin-bottom: 40px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.offers .offer:not(:nth-child(5n)) {
+  margin-right: 10px;
+}
+
+.div-owner-img {
+  height: 27px;
+  width: 27px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.div-owner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.offer-up-part {
+  display: flex;
+  align-items: center;
+}
+
+.offer-down-part {
+  height: 92%;
+  width: 100%;
+}
+
+.offer-down-part img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.offer {
+  color: grey;
+  text-decoration: none;
+}

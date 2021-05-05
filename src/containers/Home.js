@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import OfferHome from "../components/OfferHome";
+import imgHero from "../assets/img-hero.jpg";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -26,30 +27,33 @@ const Home = () => {
     <div>
       <Header />
       <div className="hero">
+        <div className="div-hero-img">
+          <img src={imgHero} alt="" />
+        </div>
         <div>
-          <p></p>
-          <button></button>
+          <p>Prêts à faire du tri dans vos placards ?</p>
+          <button>Commencer à vendre</button>
         </div>
       </div>
       <main>
         {isLoading ? (
           <p>En cours de chargement</p>
         ) : (
-          data.offers.map((offer, index) => {
-            return (
-              <OfferHome
-                key={offer._id}
-                id={offer._id}
-                productImg={offer.product_image.secure_url}
-                ownerImg={offer.owner.account.avatar.secure_url}
-                ownerName={offer.owner.account.username}
-              />
-            );
-          })
+          <div className="offers">
+            {data.offers.map((offer, index) => {
+              return (
+                <OfferHome
+                  key={offer._id}
+                  id={offer._id}
+                  productImg={offer.product_image.secure_url}
+                  ownerImg={offer.owner.account.avatar.secure_url}
+                  ownerName={offer.owner.account.username}
+                />
+              );
+            })}
+          </div>
         )}
       </main>
-      <p>HOME</p>
-      <Link to="/offer">Go to offer</Link>
     </div>
   );
 };

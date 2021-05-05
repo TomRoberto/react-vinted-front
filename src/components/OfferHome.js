@@ -2,12 +2,17 @@ import { Link } from "react-router-dom";
 
 const OfferHome = ({ productImg, ownerImg, ownerName, id }) => {
   return (
-    <Link to={`/offer/${id}`}>
-      <div>
-        <img src={ownerImg} alt="owner" />
+    <Link to={`/offer/${id}`} className="offer">
+      <div className="offer-up-part">
+        <div className="div-owner-img">
+          <img src={ownerImg} alt="owner" />
+        </div>
+
         <p>{ownerName}</p>
       </div>
-      <img src={productImg} alt="product" />
+      <div className="offer-down-part">
+        <img src={productImg} alt="product" />
+      </div>
     </Link>
   );
 };
