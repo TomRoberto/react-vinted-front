@@ -3,11 +3,33 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -90,8 +112,21 @@ const Offer = () => {
             </div>
           </div>
         </div>
+        <div className="carousel">
+          <Carousel responsive={responsive}>
+            {data.product_pictures.map((elem, index) => {
+              return (
+                <img
+                  style={{ height: "500px" }}
+                  key={index}
+                  src={elem.secure_url}
+                  alt=""
+                />
+              );
+            })}
+          </Carousel>
+        </div>
       </main>
-      <Link to="/">Return to Home</Link>
     </div>
   );
 };

@@ -8,11 +8,19 @@ import imgHero from "../assets/img-hero.jpg";
 const Home = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+
+  const numberOfPages = Math.ceil(data.count / 8);
+  const tabNumberOfPages = [];
+  for (let i = 0; i < numberOfPages; i++) {
+    tabNumberOfPages.push(0);
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=8`
         );
         setData(response.data);
         setIsLoading(false);
@@ -21,7 +29,7 @@ const Home = () => {
       }
     };
     fetchData();
-  });
+  }, [page]);
 
   return (
     <div>
@@ -54,6 +62,20 @@ const Home = () => {
           </div>
         )}
       </main>
+      <footer>
+        {tabNumberOfPages.map((elem, index) => {
+          return (
+            <button
+              className={page === index + 1 && "page-you-are-on"}
+              onClick={() => {
+                setPage(index + 1);
+              }}
+            >
+              {index + 1}
+            </button>
+          );
+        })}
+      </footer>
     </div>
   );
 };

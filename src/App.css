@@ -163,6 +163,26 @@ header button:last-child {
   object-fit: cover;
 }
 
+/* FOOTER PAGES */
+
+footer {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer button {
+  margin: 25px;
+  border-radius: 5px;
+  border: solid 2px;
+}
+
+.page-you-are-on {
+  background-color: #fff;
+  border-color: #2db0ba;
+}
+
 /* OFFER PAGE */
 
 .offer-main {
@@ -257,4 +277,10 @@ header button:last-child {
   background-color: #0ab0bb;
   border: none;
   border-radius: 5px;
+}
+
+.carousel {
+  background-color: #eaedef;
+  max-width: 1000px;
+  margin: 0 auto;
 }
