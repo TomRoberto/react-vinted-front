@@ -1,5 +1,7 @@
 /* Other rules */
 
+/* HOME PAGE */
+
 /* HEADER */
 
 .header {
@@ -103,7 +105,7 @@ header button:last-child {
 
 /* MAIN */
 
-main {
+.home-main {
   margin-top: 40px;
 }
 
@@ -123,6 +125,8 @@ main {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+  color: grey;
+  text-decoration: none;
 }
 
 .offers .offer:not(:nth-child(5n)) {
@@ -159,7 +163,98 @@ main {
   object-fit: cover;
 }
 
-.offer {
+/* OFFER PAGE */
+
+.offer-main {
+  margin-top: 75px;
+  background-color: #eaedef;
+  height: calc(100vh - 75px);
+}
+
+.offer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.offer-page-product-img {
+  height: 75%;
+  width: 35%;
+}
+
+.offer-page-product-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.offer-page-informations {
+  background-color: #fff;
+  height: 75%;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.offer-page-price {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.offer-page-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.offer-page-details > div {
+  width: 50%;
+}
+
+.offer-page-details > div > p {
+  margin-bottom: 8px;
+}
+
+.offer-page-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.offer-page-description {
   color: grey;
-  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.offer-page-owner-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.offer-page-owner-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.offer-page-owner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.offer-page-button {
+  width: 100%;
+  height: 30px;
+  background-color: #0ab0bb;
+  border: none;
+  border-radius: 5px;
 }

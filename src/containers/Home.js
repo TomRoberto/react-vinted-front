@@ -35,7 +35,7 @@ const Home = () => {
           <button>Commencer à vendre</button>
         </div>
       </div>
-      <main>
+      <main className="home-main">
         {isLoading ? (
           <p>En cours de chargement</p>
         ) : (

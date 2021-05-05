@@ -23,26 +23,21 @@ const Offer = () => {
     };
     fetchData();
   });
-  // if (!isLoading) {
-  //   if (data.product_details.length === 5) {
-  //     const marque = data.product.details[0].MARQUE;
-  //   }
-  // }
 
   return isLoading ? (
     <p>En cours de chargement</p>
   ) : (
     <div>
       <Header />
-      <main>
-        <div>
-          <div>
+      <main className="offer-main">
+        <div className="offer-container">
+          <div className="offer-page-product-img">
             <img src={data.product_image.secure_url} alt="product" />
           </div>
-          <div>
+          <div className="offer-page-informations">
             <div>
-              <p>{data.product_price} €</p>
-              <div>
+              <p className="offer-page-price">{data.product_price} €</p>
+              <div className="offer-page-details">
                 {data.product_details.length === 4 ? (
                   <div>
                     <p>MARQUE</p>
@@ -79,14 +74,19 @@ const Offer = () => {
             </div>
             <div>
               <div>
-                <p>{data.product_name}</p>
-                <p>{data.product_description}</p>
-                <div>
-                  <img src={data.owner.account.avatar.secure_url} alt="" />
+                <p className="offer-page-name">{data.product_name}</p>
+                <p className="offer-page-description">
+                  {data.product_description}
+                </p>
+                <div className="offer-page-owner-info">
+                  <div className="offer-page-owner-img">
+                    <img src={data.owner.account.avatar.secure_url} alt="" />
+                  </div>
+
                   <p>{data.owner.account.username}</p>
                 </div>
               </div>
-              <button>Acheter</button>
+              <button className="offer-page-button">Acheter</button>
             </div>
           </div>
         </div>
