@@ -6,6 +6,7 @@ import Offer from "./containers/Offer";
 function App() {
   return (
     <Router>
+      <div>hello</div>
       <Switch>
         <Route path="/offer/:id">
           <Offer />
