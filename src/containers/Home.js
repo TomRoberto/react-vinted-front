@@ -53,6 +53,7 @@ const Home = () => {
                   productImg={offer.product_image.secure_url}
                   ownerImg={offer.owner.account.avatar.secure_url}
                   ownerName={offer.owner.account.username}
+                  productPrice={offer.product_price}
                 />
               );
             })}

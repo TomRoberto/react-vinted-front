@@ -24,8 +24,8 @@ const Signup = ({ setUser }) => {
     }
   };
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
+    <main className="signup-main">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <h1>S'inscrire</h1>
         <input
           type="text"

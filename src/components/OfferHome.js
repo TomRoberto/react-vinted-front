@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const OfferHome = ({ productImg, ownerImg, ownerName, id }) => {
+const OfferHome = ({ productImg, productPrice, ownerImg, ownerName, id }) => {
   return (
     <Link to={`/offer/${id}`} className="offer">
       <div className="offer-up-part">
@@ -13,6 +13,7 @@ const OfferHome = ({ productImg, ownerImg, ownerName, id }) => {
       <div className="offer-down-part">
         <img src={productImg} alt="product" />
       </div>
+      <div>{productPrice} €</div>
     </Link>
   );
 };
