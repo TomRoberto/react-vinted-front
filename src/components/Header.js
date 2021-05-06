@@ -1,7 +1,7 @@
 import logo from "../assets/logo-vinted.png";
 import { Link } from "react-router-dom";
 
-const Header = ({ userToken, setUser }) => {
+const Header = ({ userToken, setUser, setModalLogin }) => {
   return (
     <div className="header">
       <header className="container-header">
@@ -21,9 +21,18 @@ const Header = ({ userToken, setUser }) => {
             <Link to="/signup">
               <button className="button-log">s'inscrire</button>
             </Link>
-            <Link to="/login">
+            {/* REMPLACÉ PAR UNE MODAL */}
+            {/* <Link to="/login">
               <button className="button-log">se connecter</button>
-            </Link>
+            </Link> */}
+            <button
+              onClick={() => {
+                setModalLogin(true);
+              }}
+              className="button-log"
+            >
+              se connecter
+            </button>
           </>
         )}
 

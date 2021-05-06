@@ -7,9 +7,11 @@ import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import Header from "./components/Header";
+import ModalLogin from "./components/ModalLogin";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [modalLogin, setModalLogin] = useState(false);
 
   const setUser = (token) => {
     if (token) {
@@ -22,7 +24,16 @@ function App() {
   };
   return (
     <Router>
-      <Header userToken={userToken} setUser={setUser} />
+      <Header
+        userToken={userToken}
+        setUser={setUser}
+        setModalLogin={setModalLogin}
+      />
+      <ModalLogin
+        modalLogin={modalLogin}
+        setModalLogin={setModalLogin}
+        setUser={setUser}
+      />
       <Switch>
         <Route path="/signup">
           <Signup setUser={setUser} />
