@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import OfferHome from "../components/OfferHome";
@@ -33,7 +31,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
       <div className="hero">
         <div className="div-hero-img">
           <img src={imgHero} alt="" />

@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Header from "../components/Header";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -50,7 +49,6 @@ const Offer = () => {
     <p>En cours de chargement</p>
   ) : (
     <div>
-      <Header />
       <main className="offer-main">
         <div className="offer-container">
           <div className="offer-page-product-img">

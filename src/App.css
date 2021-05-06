@@ -31,7 +31,7 @@ header input {
   padding-left: 20px;
 }
 
-header button:not(:last-child) {
+header .button-log {
   background-color: #fff;
   border: solid 2px #2db0ba;
   border-radius: 5px;
@@ -41,7 +41,7 @@ header button:not(:last-child) {
   font-weight: bold;
 }
 
-header button:last-child {
+header > button {
   border: none;
   height: 30px;
   border-radius: 5px;
@@ -283,4 +283,10 @@ footer button {
   background-color: #eaedef;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* SIGNUP PAGE */
+
+main {
+  margin-top: 75px;
 }
