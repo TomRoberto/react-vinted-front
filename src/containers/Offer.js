@@ -58,7 +58,46 @@ const Offer = () => {
             <div>
               <p className="offer-page-price">{data.product_price} €</p>
               <div className="offer-page-details">
-                {data.product_details.length === 4 ? (
+                <div>
+                  {data.product_details.map((elem, index) => {
+                    if (elem.MARQUE) {
+                      return <p key={index}>MARQUE</p>;
+                    }
+                    if (elem.TAILLE) {
+                      return <p key={index}>TAILLE</p>;
+                    }
+                    if (elem.ÉTAT) {
+                      return <p key={index}>ÉTAT</p>;
+                    }
+                    if (elem.COULEUR) {
+                      return <p key={index}>COULEUR</p>;
+                    }
+                    if (elem.EMPLACEMENT) {
+                      return <p key={index}>EMPLACEMENT</p>;
+                    }
+                  })}
+                </div>
+                <div>
+                  {data.product_details.map((elem, index) => {
+                    if (elem.MARQUE) {
+                      return <p key={index}>{elem.MARQUE}</p>;
+                    }
+                    if (elem.TAILLE) {
+                      return <p key={index}>{elem.TAILLE}</p>;
+                    }
+                    if (elem.ÉTAT) {
+                      return <p key={index}>{elem.ÉTAT}</p>;
+                    }
+                    if (elem.COULEUR) {
+                      return <p key={index}>{elem.COULEUR}</p>;
+                    }
+                    if (elem.EMPLACEMENT) {
+                      return <p key={index}>{elem.EMPLACEMENT}</p>;
+                    }
+                  })}
+                </div>
+
+                {/* {data.product_details.length === 4 ? (
                   <div>
                     <p>MARQUE</p>
                     <p>ÉTAT</p>
@@ -89,7 +128,7 @@ const Offer = () => {
                     <p>{data.product_details[3].COULEUR}</p>
                     <p>{data.product_details[4].EMPLACEMENT}</p>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
             <div>
