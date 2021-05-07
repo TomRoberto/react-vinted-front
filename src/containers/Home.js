@@ -18,7 +18,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=8`
+          `https://le-reacteur-vinted-backend.herokuapp.com/offers?page=${page}&limit=8`
         );
         setData(response.data);
         setIsLoading(false);
