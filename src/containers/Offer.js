@@ -149,20 +149,22 @@ const Offer = () => {
             </div>
           </div>
         </div>
-        <div className="carousel">
-          <Carousel responsive={responsive}>
-            {data.product_pictures.map((elem, index) => {
-              return (
-                <img
-                  style={{ height: "500px" }}
-                  key={index}
-                  src={elem.secure_url}
-                  alt=""
-                />
-              );
-            })}
-          </Carousel>
-        </div>
+        {data.product_pictures.length > 1 && (
+          <div className="carousel">
+            <Carousel responsive={responsive}>
+              {data.product_pictures.map((elem, index) => {
+                return (
+                  <img
+                    style={{ height: "500px" }}
+                    key={index}
+                    src={elem.secure_url}
+                    alt=""
+                  />
+                );
+              })}
+            </Carousel>
+          </div>
+        )}
       </main>
     </div>
   );
