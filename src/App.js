@@ -12,6 +12,10 @@ import ModalLogin from "./components/ModalLogin";
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   const [modalLogin, setModalLogin] = useState(false);
+  const [title, setTitle] = useState("");
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(500);
+  const [priceDesc, setPriceDesc] = useState("price-asc");
 
   const setUser = (token) => {
     if (token) {
@@ -23,32 +27,44 @@ function App() {
     }
   };
   return (
-    <Router>
-      <Header
-        userToken={userToken}
-        setUser={setUser}
-        setModalLogin={setModalLogin}
-      />
-      <ModalLogin
-        modalLogin={modalLogin}
-        setModalLogin={setModalLogin}
-        setUser={setUser}
-      />
-      <Switch>
-        <Route path="/signup">
-          <Signup setUser={setUser} />
-        </Route>
-        <Route path="/login">
-          <Login setUser={setUser} />
-        </Route>
-        <Route path="/offer/:id">
-          <Offer />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="app">
+      <Router>
+        <Header
+          userToken={userToken}
+          setUser={setUser}
+          setModalLogin={setModalLogin}
+          setTitle={setTitle}
+          priceDesc={priceDesc}
+          setPriceDesc={setPriceDesc}
+          setPriceMin={setPriceMin}
+          setPriceMax={setPriceMax}
+        />
+        <ModalLogin
+          modalLogin={modalLogin}
+          setModalLogin={setModalLogin}
+          setUser={setUser}
+        />
+        <Switch>
+          <Route path="/signup">
+            <Signup setUser={setUser} />
+          </Route>
+          <Route path="/login">
+            <Login setUser={setUser} />
+          </Route>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/">
+            <Home
+              title={title}
+              priceDesc={priceDesc}
+              priceMin={priceMin}
+              priceMax={priceMax}
+            />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

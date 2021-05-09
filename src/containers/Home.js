@@ -3,13 +3,15 @@ import axios from "axios";
 import OfferHome from "../components/OfferHome";
 import imgHero from "../assets/img-hero.jpg";
 
-const Home = () => {
+const Home = ({ title, priceDesc, priceMin, priceMax }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(8);
 
   const numberOfPages = Math.ceil(data.count / 8);
   const tabNumberOfPages = [];
+
   for (let i = 0; i < numberOfPages; i++) {
     tabNumberOfPages.push(0);
   }
@@ -18,16 +20,17 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://le-reacteur-vinted-backend.herokuapp.com/offers?page=${page}&limit=8`
+          `https://le-reacteur-vinted-backend.herokuapp.com/offers?page=${page}&limit=${limit}&title=${title}&sort=${priceDesc}&priceMin=${priceMin}&priceMax=${priceMax}`
         );
         setData(response.data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, title, priceDesc, priceMin, priceMax, limit]);
 
   return (
     <div>
@@ -54,6 +57,7 @@ const Home = () => {
                   ownerImg={offer.owner.account.avatar.secure_url}
                   ownerName={offer.owner.account.username}
                   productPrice={offer.product_price}
+                  productName={offer.product_name}
                 />
               );
             })}
@@ -64,6 +68,7 @@ const Home = () => {
         {tabNumberOfPages.map((elem, index) => {
           return (
             <button
+              key={index}
               className={page === index + 1 && "page-you-are-on"}
               onClick={() => {
                 setPage(index + 1);

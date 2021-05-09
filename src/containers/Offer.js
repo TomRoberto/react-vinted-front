@@ -62,18 +62,16 @@ const Offer = () => {
                   {data.product_details.map((elem, index) => {
                     if (elem.MARQUE) {
                       return <p key={index}>MARQUE</p>;
-                    }
-                    if (elem.TAILLE) {
+                    } else if (elem.TAILLE) {
                       return <p key={index}>TAILLE</p>;
-                    }
-                    if (elem.ÉTAT) {
+                    } else if (elem.ÉTAT) {
                       return <p key={index}>ÉTAT</p>;
-                    }
-                    if (elem.COULEUR) {
+                    } else if (elem.COULEUR) {
                       return <p key={index}>COULEUR</p>;
-                    }
-                    if (elem.EMPLACEMENT) {
+                    } else if (elem.EMPLACEMENT) {
                       return <p key={index}>EMPLACEMENT</p>;
+                    } else {
+                      return null;
                     }
                   })}
                 </div>
@@ -81,18 +79,16 @@ const Offer = () => {
                   {data.product_details.map((elem, index) => {
                     if (elem.MARQUE) {
                       return <p key={index}>{elem.MARQUE}</p>;
-                    }
-                    if (elem.TAILLE) {
+                    } else if (elem.TAILLE) {
                       return <p key={index}>{elem.TAILLE}</p>;
-                    }
-                    if (elem.ÉTAT) {
+                    } else if (elem.ÉTAT) {
                       return <p key={index}>{elem.ÉTAT}</p>;
-                    }
-                    if (elem.COULEUR) {
+                    } else if (elem.COULEUR) {
                       return <p key={index}>{elem.COULEUR}</p>;
-                    }
-                    if (elem.EMPLACEMENT) {
+                    } else if (elem.EMPLACEMENT) {
                       return <p key={index}>{elem.EMPLACEMENT}</p>;
+                    } else {
+                      return null;
                     }
                   })}
                 </div>
