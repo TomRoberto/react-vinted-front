@@ -1,5 +1,6 @@
 import logo from "../assets/logo-vinted.png";
 import { Link, useHistory } from "react-router-dom";
+import SuperSimple from "./ReactSlider";
 
 const Header = ({
   userToken,
@@ -39,6 +40,7 @@ const Header = ({
                 }}
               />
             </div>
+            {/* <SuperSimple /> */}
             <div>
               <span>Prix minimum</span>
               <input
