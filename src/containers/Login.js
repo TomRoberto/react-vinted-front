@@ -5,6 +5,7 @@ import axios from "axios";
 const Login = ({ setUser }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const history = useHistory();
 
@@ -16,9 +17,13 @@ const Login = ({ setUser }) => {
         { email: userEmail, password: userPassword }
       );
       setUser(response.data.token);
+      setErrorMessage("");
       alert("login accepted");
-      history.push("/");
+      history.push("/publish");
     } catch (error) {
+      if (error.response.status === 401) {
+        setErrorMessage("Mauvais email et/ou mot de passe");
+      }
       console.log(error.message);
     }
   };
@@ -43,6 +48,7 @@ const Login = ({ setUser }) => {
         />
         <input type="submit" value="Se connecter" />
         <Link to="/signup">Pas encore de compte ? inscris-toi ?</Link>
+        <p>{errorMessage}</p>
       </form>
     </main>
   );

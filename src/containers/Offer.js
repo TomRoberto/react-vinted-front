@@ -43,7 +43,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  });
+  }, [id]);
 
   return isLoading ? (
     <p>En cours de chargement</p>
@@ -135,7 +135,9 @@ const Offer = () => {
                 </p>
                 <div className="offer-page-owner-info">
                   <div className="offer-page-owner-img">
-                    <img src={data.owner.account.avatar.secure_url} alt="" />
+                    {data.owner.account.avatar && (
+                      <img src={data.owner.account.avatar.secure_url} alt="" />
+                    )}
                   </div>
 
                   <p>{data.owner.account.username}</p>

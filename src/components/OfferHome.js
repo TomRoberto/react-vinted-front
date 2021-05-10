@@ -12,7 +12,7 @@ const OfferHome = ({
     <Link to={`/offer/${id}`} className="offer">
       <div className="offer-up-part">
         <div className="div-owner-img">
-          <img src={ownerImg} alt="owner" />
+          {ownerImg && <img src={ownerImg} alt="owner" />}
         </div>
 
         <p>{ownerName}</p>

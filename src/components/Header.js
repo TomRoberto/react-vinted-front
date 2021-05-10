@@ -1,5 +1,5 @@
 import logo from "../assets/logo-vinted.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Header = ({
   userToken,
@@ -11,6 +11,7 @@ const Header = ({
   setPriceMin,
   setPriceMax,
 }) => {
+  let history = useHistory();
   return (
     <div className="header">
       <header className="container-header">
@@ -64,6 +65,7 @@ const Header = ({
             className="button-log"
             onClick={() => {
               setUser(null);
+              history.push("/home");
             }}
           >
             déconnection
@@ -88,7 +90,11 @@ const Header = ({
           </>
         )}
 
-        <button>vends tes articles</button>
+        <button>
+          <Link className="link-to-publish" to="/publish">
+            vends tes articles
+          </Link>
+        </button>
       </header>
     </div>
   );

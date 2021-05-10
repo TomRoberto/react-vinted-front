@@ -54,7 +54,10 @@ const Home = ({ title, priceDesc, priceMin, priceMax }) => {
                   key={offer._id}
                   id={offer._id}
                   productImg={offer.product_image.secure_url}
-                  ownerImg={offer.owner.account.avatar.secure_url}
+                  ownerImg={
+                    offer.owner.account.avatar &&
+                    offer.owner.account.avatar.secure_url
+                  }
                   ownerName={offer.owner.account.username}
                   productPrice={offer.product_price}
                   productName={offer.product_name}
@@ -69,7 +72,7 @@ const Home = ({ title, priceDesc, priceMin, priceMax }) => {
           return (
             <button
               key={index}
-              className={page === index + 1 && "page-you-are-on"}
+              className={page === index + 1 ? "page-you-are-on" : undefined}
               onClick={() => {
                 setPage(index + 1);
               }}

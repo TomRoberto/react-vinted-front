@@ -19,7 +19,7 @@ const ModalLogin = ({ modalLogin, setModalLogin, setUser }) => {
       setUser(response.data.token);
       setErrorMessage("");
       alert("login accepted");
-      history.push("/");
+      history.push("/publish");
       setModalLogin(false);
     } catch (error) {
       if (error.response.status === 401) {

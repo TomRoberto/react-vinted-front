@@ -54,6 +54,11 @@ header > button {
   color: #fff;
 }
 
+.link-to-publish {
+  text-decoration: none;
+  color: #fff;
+}
+
 .container-header {
   max-width: 1250px;
   margin: 0 auto;
@@ -70,7 +75,7 @@ header > button {
 /* HERO */
 
 .hero {
-  margin-top: 75px;
+  margin-top: 105px;
   position: relative;
 }
 
@@ -202,7 +207,7 @@ footer button {
 /* OFFER PAGE */
 
 .offer-main {
-  margin-top: 75px;
+  margin-top: 105px;
   background-color: #eaedef;
   height: calc(100vh - 75px);
 }
@@ -304,7 +309,7 @@ footer button {
 /* SIGNUP PAGE */
 
 .signup-main {
-  margin-top: 75px;
+  margin-top: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,7 +372,7 @@ footer button {
 /* LOGIN PAGE */
 
 .login-main {
-  margin-top: 75px;
+  margin-top: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,4 +446,98 @@ footer button {
   background-color: black;
   color: #fff;
   border: none;
+}
+
+/* PUBLISH PAGE */
+
+.main-publish {
+  margin-top: 105px;
+  background-color: #ebedee;
+}
+
+.publish-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.publish-container h1 {
+  font-size: 24px;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+.publish-container form > div {
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: solid #cbcdcd 1px;
+}
+
+.publish-container form > div > div {
+  padding: 20px;
+  border-bottom: solid #ebedee 1px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.publish-container form > div:not(:first-child) > div input {
+  width: 50%;
+  border: none;
+  border-bottom: solid #ebedee 1px;
+}
+
+.publish-container form > div:nth-child(1) {
+  height: 250px;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.publish-container form > div:nth-child(1) > div {
+  border: dashed #cbcdcd 1px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.publish-container .title-description {
+  height: 225px;
+}
+
+.publish-container .title-description div:nth-child(1) {
+  height: calc(100% / 3);
+}
+
+.publish-container .title-description div:nth-child(2) {
+  height: calc(2 * (100% / 3));
+}
+
+.publish-container .brand-size-etc {
+  height: 368px;
+}
+
+.publish-container .brand-size-etc div {
+  height: calc(100% / 5);
+}
+
+.publish-container .price-checkbox :last-child input {
+  width: auto;
+}
+
+.publish-input-p {
+  display: flex;
+  padding: 30px 0;
+  flex-direction: row-reverse;
+}
+
+.publish-input-p input {
+  height: 40px;
+  width: 120px;
+  border: none;
+  background-color: #0ab1ba;
+  border-radius: 5px;
+  color: white;
 }
