@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Dropzone from "react-dropzone";
 
 const Publish = ({ userToken }) => {
   const [picture, setPicture] = useState();
@@ -56,13 +57,36 @@ const Publish = ({ userToken }) => {
         >
           <div>
             <div>
-              <input
+              <Dropzone
+                onDrop={(acceptedFiles) => {
+                  setPicture(acceptedFiles[0]);
+                }}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      {picture ? (
+                        <p className="drag-n-drop-saved">
+                          your image "{picture.name}" has been saved !
+                        </p>
+                      ) : (
+                        <p className="drag-n-drop-drag">
+                          Drag 'n' drop some files here, or click to select
+                          files
+                        </p>
+                      )}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+              {/* <input
                 type="file"
                 onChange={(event) => {
                   setPicture(event.target.files[0]);
                   console.log(picture);
                 }}
-              />
+              /> */}
             </div>
           </div>
           <div className="title-description">
