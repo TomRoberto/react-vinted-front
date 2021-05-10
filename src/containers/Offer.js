@@ -152,12 +152,15 @@ const Offer = () => {
             <Carousel responsive={responsive}>
               {data.product_pictures.map((elem, index) => {
                 return (
-                  <img
-                    style={{ height: "500px" }}
-                    key={index}
-                    src={elem.secure_url}
-                    alt=""
-                  />
+                  <div className="div-carousel">
+                    <img
+                      className="img-carousel"
+                      // style={{ height: "500px" }}
+                      key={index}
+                      src={elem.secure_url}
+                      alt=""
+                    />
+                  </div>
                 );
               })}
             </Carousel>
