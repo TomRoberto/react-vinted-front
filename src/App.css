@@ -76,6 +76,13 @@ header > button {
   width: 100%;
 }
 
+.header-input-price {
+  border-radius: 10px;
+  border: solid black 1px;
+  width: 30px;
+  margin-left: 10px;
+}
+
 /* HERO */
 
 .hero {

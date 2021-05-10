@@ -42,6 +42,7 @@ const Header = ({
             <div>
               <span>Prix minimum</span>
               <input
+                className="header-input-price"
                 type="text"
                 onChange={(event) => {
                   setPriceMin(event.target.value);
@@ -51,6 +52,7 @@ const Header = ({
             <div>
               <span>Prix maximum</span>
               <input
+                className="header-input-price"
                 type="text"
                 onChange={(event) => {
                   setPriceMax(event.target.value);
