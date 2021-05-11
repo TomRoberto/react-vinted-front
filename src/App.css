@@ -592,4 +592,51 @@ footer button {
 
 .payment-main {
   margin-top: 105px;
+  background-color: #eaedef;
+  height: calc(100vh - 105px);
+  display: flex;
+  align-items: center;
+}
+
+.payment-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.payment-container p {
+  color: grey;
+  margin-bottom: 30px;
+}
+.payment-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-container .payment-element {
+  margin-bottom: 20px;
+}
+
+.payment-paragraph {
+  margin-bottom: 20px;
+}
+
+.card-element {
+  border: solid grey 1px;
+  padding: 3px;
+}
+
+.payment-container input {
+  margin-top: 20px;
+  width: 100%;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.payment-bold {
+  font-weight: bold;
 }

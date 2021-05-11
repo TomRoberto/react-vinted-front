@@ -57,8 +57,8 @@ const CheckoutForm = ({ userId, price, offerId, userToken, name }) => {
           handleSubmit();
         }}
       >
-        <CardElement />
-        <input type="submit" />
+        <CardElement className="card-element" />
+        <input type="submit" value="Pay" />
       </form>
       {successMessage && <div>{successMessage}</div>}
     </div>
