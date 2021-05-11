@@ -2,17 +2,14 @@ import { Redirect, useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
+import { useState } from "react";
 
 const Payment = ({ userToken, userId }) => {
   const location = useLocation();
   // const { name, price, id } = location.state;
-  const name = location.state.name;
-  const price = location.state.price;
-  const id = location.state.id;
 
-  console.log(name);
+  const essai = { ...location.state };
 
-  const realPrice = price.toFixed(2);
   const stripePromise = loadStripe(
     "pk_test_51IpvphDqQKb3lCIT3UU1fIPnAXyyG57gLns831kNwLVGCFo1a3MtSucuiIwEijgip8fL85zUlKZKTK0a2JAhSWHt00ZWSjTErF"
   );
@@ -20,11 +17,11 @@ const Payment = ({ userToken, userId }) => {
   return userToken ? (
     <main className="payment-main">
       <div className="payment-container">
-        <div>
+        {/* <div>
           <p>Résumé de la commande</p>
           <div className="payment-infos">
             <span className="payment-element">Commande</span>
-            <span className="payment-element">{realPrice} €</span>
+            <span className="payment-element">{price} €</span>
           </div>
           <div className="payment-infos">
             <span className="payment-element">Frais protection acheteurs</span>
@@ -40,27 +37,28 @@ const Payment = ({ userToken, userId }) => {
             <span className="payment-element payment-bold">Total</span>
             <span className="payment-element payment-bold">
               {" "}
-              {(price + 1.2).toFixed(2)} €
+              {price + 1.2} €
             </span>
           </div>
           <div className="payment-paragraph">
             Il ne vous reste plus qu'une étape pour vous offrir{" "}
             <span className="payment-bold">{name}</span>. Vous allez payer{" "}
-            <span className="payment-bold">{(price + 1.2).toFixed(2)} € </span>{" "}
-            (frais de protection et frais de port inclus).
-          </div>
-          <div>
-            <Elements stripe={stripePromise}>
-              <CheckoutForm
-                userId={userId}
-                price={(price + 1.2).toFixed(2)}
-                offerId={id}
-                userToken={userToken}
-                name={name}
-              />
-            </Elements>
-          </div>
+            <span className="payment-bold">{price + 1.2} € </span> (frais de
+            protection et frais de port inclus).
+          </div> */}
+        <div>
+          <Elements stripe={stripePromise}>
+            <CheckoutForm
+              userId={userId}
+              // price={(price + 1.2).toFixed(2)}
+              // offerId={id}
+              userToken={userToken}
+              // name={name}
+              essai={essai}
+            />
+          </Elements>
         </div>
+        {/* </div> */}
       </div>
     </main>
   ) : (

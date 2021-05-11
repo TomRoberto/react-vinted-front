@@ -148,7 +148,7 @@ const Offer = () => {
               <button
                 className="offer-page-button"
                 onClick={() => {
-                  history.push("/payment", {
+                  history.push(`/payment`, {
                     name: data.product_name,
                     price: data.product_price,
                     id: data._id,

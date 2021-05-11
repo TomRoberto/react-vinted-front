@@ -2,14 +2,18 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
 
-const CheckoutForm = ({ userId, price, offerId, userToken, name }) => {
+const CheckoutForm = ({ offerId, userToken, essai }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [successMessage, setSuccessMessage] = useState("");
+  const name = essai.name;
+  const price = essai.price;
+  const userId = essai.id;
+  console.log(essai);
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       const cardElements = elements.getElement(CardElement);
       const stripeResponse = await stripe.createToken(cardElements, {
         name: userId,
@@ -30,17 +34,19 @@ const CheckoutForm = ({ userId, price, offerId, userToken, name }) => {
       );
       if (response.status === 200) {
         setSuccessMessage("Votre paiement a bien été validé");
-        await axios.delete(
+        const deletionResponse = await axios.delete(
           "https://le-reacteur-vinted-backend.herokuapp.com/offer/delete",
-          {
-            id: offerId,
-          },
+
           {
             headers: {
               authorization: `Bearer ${userToken}`,
             },
+            data: {
+              id: userId,
+            },
           }
         );
+        console.log(deletionResponse);
       } else {
         setSuccessMessage(
           "Il y a eu un problème dans la gestion de votre paiement"
@@ -52,11 +58,37 @@ const CheckoutForm = ({ userId, price, offerId, userToken, name }) => {
   };
   return (
     <div>
-      <form
-        onSubmit={(event) => {
-          handleSubmit();
-        }}
-      >
+      <form onSubmit={handleSubmit}>
+        <div>
+          <p>Résumé de la commande</p>
+          <div className="payment-infos">
+            <span className="payment-element">Commande</span>
+            <span className="payment-element">{price} €</span>
+          </div>
+          <div className="payment-infos">
+            <span className="payment-element">Frais protection acheteurs</span>
+            <span className="payment-element">0.40 €</span>
+          </div>
+          <div className="payment-infos">
+            <span className="payment-element">Frais de port</span>
+            <span className="payment-element">0.80 €</span>
+          </div>
+        </div>
+        <div>
+          <div className="payment-infos">
+            <span className="payment-element payment-bold">Total</span>
+            <span className="payment-element payment-bold">
+              {" "}
+              {price + 1.2} €
+            </span>
+          </div>
+          <div className="payment-paragraph">
+            Il ne vous reste plus qu'une étape pour vous offrir{" "}
+            <span className="payment-bold">{name}</span>. Vous allez payer{" "}
+            <span className="payment-bold">{price + 1.2} € </span> (frais de
+            protection et frais de port inclus).
+          </div>
+        </div>
         <CardElement className="card-element" />
         <input type="submit" value="Pay" />
       </form>
