@@ -14,22 +14,28 @@ import Login from "./containers/Login";
 import Header from "./components/Header";
 import ModalLogin from "./components/ModalLogin";
 import Publish from "./containers/Publish";
+import Payment from "./containers/Payment";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
   const [modalLogin, setModalLogin] = useState(false);
   const [title, setTitle] = useState("");
   const [priceMin, setPriceMin] = useState(0);
   const [priceMax, setPriceMax] = useState(500);
   const [priceDesc, setPriceDesc] = useState("price-asc");
 
-  const setUser = (token) => {
+  const setUser = (token, id) => {
     if (token) {
       Cookies.set("userToken", token, { expires: 7 });
       setUserToken(token);
+      Cookies.set("userId", id, { expires: 7 });
+      setUserId(id);
     } else {
       Cookies.remove("userToken");
       setUserToken(null);
+      Cookies.remove("userId");
+      setUserId(null);
     }
   };
   return (
@@ -51,6 +57,9 @@ function App() {
           setUser={setUser}
         />
         <Switch>
+          <Route path="/payment">
+            <Payment userToken={userToken} userId={userId} />
+          </Route>
           <Route path="/publish">
             {userToken ? (
               <Publish userToken={userToken} />

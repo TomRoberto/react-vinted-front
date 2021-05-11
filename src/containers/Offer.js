@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -9,6 +9,8 @@ const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+
+  const history = useHistory();
 
   const responsive = {
     superLargeDesktop: {
@@ -143,7 +145,18 @@ const Offer = () => {
                   <p>{data.owner.account.username}</p>
                 </div>
               </div>
-              <button className="offer-page-button">Acheter</button>
+              <button
+                className="offer-page-button"
+                onClick={() => {
+                  history.push("/payment", {
+                    name: data.product_name,
+                    price: data.product_price,
+                    id: data._id,
+                  });
+                }}
+              >
+                Acheter
+              </button>
             </div>
           </div>
         </div>

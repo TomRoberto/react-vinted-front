@@ -73,6 +73,7 @@ header > button {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -310,6 +311,11 @@ footer button {
   border: none;
   border-radius: 5px;
 }
+
+/* .offer-page-button-link {
+  text-decoration: none;
+  color: #fff;
+} */
 
 .carousel {
   background-color: #eaedef;
@@ -580,4 +586,10 @@ footer button {
   line-height: 30px;
   border: solid red 3px;
   border-radius: 5px;
+}
+
+/* PAYMENT PAGE */
+
+.payment-main {
+  margin-top: 105px;
 }

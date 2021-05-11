@@ -16,7 +16,7 @@ const Signup = ({ setUser }) => {
         "https://le-reacteur-vinted-backend.herokuapp.com/user/signup",
         { username: userName, email: userEmail, password: userPassword }
       );
-      setUser(response.data.token);
+      setUser(response.data.token, response.data._id);
       history.push("/");
       alert("Account created");
     } catch (error) {

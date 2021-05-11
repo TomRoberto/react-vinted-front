@@ -40,8 +40,8 @@ const Header = ({
                 }}
               />
             </div>
-            {/* <SuperSimple /> */}
-            <div>
+            <SuperSimple setPriceMin={setPriceMin} setPriceMax={setPriceMax} />
+            {/* <div>
               <span>Prix minimum</span>
               <input
                 className="header-input-price"
@@ -60,7 +60,7 @@ const Header = ({
                   setPriceMax(event.target.value);
                 }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -68,7 +68,7 @@ const Header = ({
           <button
             className="button-log"
             onClick={() => {
-              setUser(null);
+              setUser(null, null);
               history.push("/home");
             }}
           >
