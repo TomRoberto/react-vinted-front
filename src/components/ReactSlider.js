@@ -1,11 +1,17 @@
 import * as React from "react";
 import { Range } from "react-range";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SuperSimple = ({ setPriceMin, setPriceMax }) => {
   const [values, setValues] = useState([0, 500]);
-  setPriceMin(values[0]);
-  setPriceMax(values[1]);
+  const [finalValues, setFinalValues] = useState([0, 500]);
+  useEffect(() => {
+    const handleChanges = () => {
+      setPriceMin(finalValues[0]);
+      setPriceMax(finalValues[1]);
+    };
+    handleChanges();
+  }, [finalValues]);
 
   return (
     <Range
@@ -14,6 +20,7 @@ const SuperSimple = ({ setPriceMin, setPriceMax }) => {
       max={500}
       values={values}
       onChange={(values) => setValues(values)}
+      onFinalChange={(values) => setFinalValues(values)}
       renderTrack={({ props, children }) => (
         <div
           {...props}
