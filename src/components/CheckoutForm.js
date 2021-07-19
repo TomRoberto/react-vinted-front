@@ -7,7 +7,7 @@ const CheckoutForm = ({ offerId, userToken, essai }) => {
   const elements = useElements();
   const [successMessage, setSuccessMessage] = useState("");
   const name = essai.name;
-  const price = essai.price;
+  const price = Number(essai.price) + 1.2;
   const userId = essai.id;
   console.log(essai);
 
