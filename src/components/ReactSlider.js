@@ -39,9 +39,13 @@ const SuperSimple = ({ setPriceMin, setPriceMax }) => {
           {...props}
           style={{
             ...props.style,
-            height: "32px",
-            width: "32px",
+            height: "50px",
+            width: "50px",
+            borderRadius: "25px",
             backgroundColor: "#999",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           {values[index]} €
