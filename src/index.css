@@ -124,3 +124,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  transform: scale(0.9);
+}
+input:focus {
+  outline: none;
+  border: solid 2px #2db0ba;
+}
+* {
+  /* box-sizing: border-box; */
+}

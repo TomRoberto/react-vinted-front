@@ -16,15 +16,15 @@ const Offer = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 1,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -54,7 +54,25 @@ const Offer = () => {
       <main className="offer-main">
         <div className="offer-container">
           <div className="offer-page-product-img">
-            <img src={data.product_image.secure_url} alt="product" />
+            {/* <img src={data.product_image.secure_url} alt="product" /> */}
+            <Carousel
+              responsive={responsive}
+              containerClass="carousel-container"
+            >
+              {data.product_pictures.map((elem, index) => {
+                return (
+                  <div className="div-carousel">
+                    <img
+                      className="img-carousel"
+                      // style={{ height: "500px" }}
+                      key={index}
+                      src={elem.secure_url}
+                      alt=""
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
           <div className="offer-page-informations">
             <div>
@@ -160,7 +178,7 @@ const Offer = () => {
             </div>
           </div>
         </div>
-        {data.product_pictures.length > 1 && (
+        {/* {data.product_pictures.length > 1 && (
           <div className="carousel">
             <Carousel responsive={responsive}>
               {data.product_pictures.map((elem, index) => {
@@ -178,7 +196,7 @@ const Offer = () => {
               })}
             </Carousel>
           </div>
-        )}
+        )} */}
       </main>
     </div>
   );

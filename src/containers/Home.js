@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import OfferHome from "../components/OfferHome";
 import imgHero from "../assets/img-hero.jpg";
+import { Link } from "react-router-dom";
 
 const Home = ({ title, priceDesc, priceMin, priceMax }) => {
   const [data, setData] = useState({});
@@ -40,7 +41,9 @@ const Home = ({ title, priceDesc, priceMin, priceMax }) => {
         </div>
         <div>
           <p>Prêts à faire du tri dans vos placards ?</p>
-          <button>Commencer à vendre</button>
+          <Link to="/publish">
+            <button>Commencer à vendre</button>
+          </Link>
         </div>
       </div>
       <main className="home-main">

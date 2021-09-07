@@ -58,7 +58,7 @@ const CheckoutForm = ({ offerId, userToken, essai }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form-payment" onSubmit={handleSubmit}>
         <div>
           <p>Résumé de la commande</p>
           <div className="payment-infos">

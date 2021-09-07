@@ -14,44 +14,48 @@ const SuperSimple = ({ setPriceMin, setPriceMax }) => {
   }, [finalValues]);
 
   return (
-    <Range
-      step={1}
-      min={0}
-      max={500}
-      values={values}
-      onChange={(values) => setValues(values)}
-      onFinalChange={(values) => setFinalValues(values)}
-      renderTrack={({ props, children }) => (
-        <div
-          {...props}
-          style={{
-            ...props.style,
-            height: "6px",
-            width: "100%",
-            backgroundColor: "#ccc",
-          }}
-        >
-          {children}
-        </div>
-      )}
-      renderThumb={({ props, index }) => (
-        <div
-          {...props}
-          style={{
-            ...props.style,
-            height: "50px",
-            width: "50px",
-            borderRadius: "25px",
-            backgroundColor: "#999",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {values[index]} €
-        </div>
-      )}
-    />
+    <div className="range-container">
+      <Range
+        step={1}
+        min={0}
+        max={500}
+        values={values}
+        onChange={(values) => setValues(values)}
+        onFinalChange={(values) => setFinalValues(values)}
+        renderTrack={({ props, children }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: "6px",
+              width: "100%",
+              backgroundColor: "#2DB0BA",
+            }}
+          >
+            {children}
+          </div>
+        )}
+        renderThumb={({ props, index }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: "50px",
+              width: "50px",
+              borderRadius: "25px",
+              // backgroundColor: "#999",
+              backgroundColor: "#2DB0BA",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+            }}
+          >
+            {values[index]} €
+          </div>
+        )}
+      />
+    </div>
   );
 };
 

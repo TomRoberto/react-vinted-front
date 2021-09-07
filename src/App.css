@@ -17,13 +17,13 @@
 }
 header {
   display: flex;
-  height: 85px;
+  height: 105px;
   justify-content: space-between;
   align-items: center;
 }
 
 header img {
-  height: 30px;
+  height: 50px;
 }
 
 header > div:nth-child(2) {
@@ -37,6 +37,13 @@ header > div:nth-child(2) {
   border-radius: 5px;
   border: none;
   padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.header-input-search :focus {
+  /* border: none; */
+  border: solid 2px #2db0ba;
+  /* background-color: #2db0ba; */
 }
 
 header .button-log {
@@ -77,11 +84,26 @@ header > button {
   width: 100%;
 }
 
-.header-input-price {
+.asc {
+  display: flex;
+  align-items: center;
+  /* border: solid black 1px; */
+  margin-right: 40px;
+}
+
+/* .header-input-price {
   border-radius: 10px;
   border: solid black 1px;
   width: 30px;
   margin-left: 10px;
+} */
+
+.range-container {
+  width: 100%;
+}
+
+.range-container div:focus {
+  border: none;
 }
 
 /* HERO */
@@ -236,6 +258,7 @@ footer button {
 .offer-page-product-img {
   height: 75%;
   width: 35%;
+  /* border: solid black 1px; */
 }
 
 .offer-page-product-img img {
@@ -317,6 +340,15 @@ footer button {
   color: #fff;
 } */
 
+.carousel-container {
+  height: 100%;
+  /* width: 100%; */
+}
+
+.carousel-container :first-child {
+  height: 100%;
+}
+
 .carousel {
   background-color: #eaedef;
   max-width: 1000px;
@@ -324,7 +356,10 @@ footer button {
 }
 
 .div-carousel {
-  height: 500px;
+  /* height: 500px; */
+  height: 100%;
+  width: 100%;
+  /* border: solid red 1px; */
 }
 .img-carousel {
   height: 100%;
@@ -419,7 +454,7 @@ footer button {
 .login-form input:nth-child(2),
 .login-form input:nth-child(3) {
   height: 30px;
-  border: none;
+  border: inherit;
   border-bottom: solid 1px rgb(218, 216, 216);
   margin-bottom: 20px;
 }
@@ -635,6 +670,7 @@ footer button {
   border: none;
   border-radius: 5px;
   color: white;
+  height: 40px;
 }
 
 .payment-bold {

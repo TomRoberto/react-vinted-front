@@ -16,20 +16,24 @@ const Header = ({
   return (
     <div className="header">
       <header className="container-header">
-        <img src={logo} alt="logo vinted" />
+        <Link to="/">
+          <img src={logo} alt="logo vinted" />
+        </Link>
+
         <div>
           <input
             className="header-input-search"
             type="text"
-            placeholder="Recherche des articles"
+            placeholder="Rechercher des articles"
             onChange={(event) => {
               setTitle(event.target.value);
             }}
           />
           <div className="handle-price">
-            <div>
+            <div className="asc">
               <span>Trier par prix décroissant</span>
               <input
+                style={{ color: "#2DB0BA" }}
                 type="checkbox"
                 onChange={() => {
                   if (priceDesc === "price-asc") {
@@ -72,7 +76,7 @@ const Header = ({
               history.push("/home");
             }}
           >
-            déconnection
+            déconnexion
           </button>
         ) : (
           <>
