@@ -1,10 +1,47 @@
 # Vinted copy
 
-This project is a copy of the Vinted web app front.
+This project is a copy of the Vinted web app's frontend.
 
 ## What can you do with this app ?
 
-- On the home page, you have all the products available
+### Home page
+
+On the home page, you have all the products available. You can decide to have them ordered by increasing or decreasing price. You can also decide to search between the products based on :
+
+- Their name
+- A price range
+
+If you click on one of the offers displayed, you will be redirected to the offer page.
+
+You also have a login `se connecter` and a signup `s'inscrire` button. They redirect you to the login and the signup pages. The button `vends tes articles` redirects you to the login page or to the publish page if you are connected.
+
+### Signup page
+
+This page let's you signup and request a username, email and password.
+
+The signup page let's you acces to the login page by clicking on the `Tu as déjà un compte ? Connecte-toi !` button.
+
+### Login page
+
+The login page is eather a modal (if you get hear by clicking on the `se connecter`) or a normal page if you click on the `vends tes articles` (sell your articles) button.
+
+It needs you email and your password to let you in.
+
+The login page let's you acces to the signup page by clicking on the `Pas encore de compte ? inscris-toi ?` button.
+
+### Offer page
+
+On this page you get all the informations about the product. You can decide to "buy" it by clicking on the `acheter` button. By doing so you get redirected to the login page if you are not connected ; if you are, it will lead you to the payment page.
+
+### Payment page
+
+This page let's you check the price of the object and the fees. It let's you enter your card number and pay by clicking on the `pay` button.
+
+### Publish page
+
+The publish page let's you publish a product and sell it. You need to enter some informations on it, you can and pictures and decide the price.
+
+Publish you offer by clicking on `ajouter`.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
