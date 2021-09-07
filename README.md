@@ -1,3 +1,11 @@
+# Vinted copy
+
+This project is a copy of the Vinted web app front.
+
+## What can you do with this app ?
+
+- On the home page, you have all the products available
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
