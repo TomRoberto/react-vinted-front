@@ -6,6 +6,8 @@ This project is a copy of the Vinted web app's frontend.
 
 ### Home page
 
+![Home page](./src/assets/images-readMe/home_page.png)
+
 On the home page, you have all the products available. You can decide to have them ordered by increasing or decreasing price. You can also decide to search between the products based on :
 
 - Their name
@@ -17,11 +19,16 @@ You also have a login `se connecter` and a signup `s'inscrire` button. They redi
 
 ### Signup page
 
+![Signup page](./src/assets/images-readMe/signup.png)
+
 This page let's you signup and request a username, email and password.
 
 The signup page let's you acces to the login page by clicking on the `Tu as déjà un compte ? Connecte-toi !` button.
 
 ### Login page
+
+![Login page](./src/assets/images-readMe/login_1.png)
+![login page](./src/assets/images-readMe/login_2.png)
 
 The login page is eather a modal (if you get hear by clicking on the `se connecter`) or a normal page if you click on the `vends tes articles` (sell your articles) button.
 
@@ -31,17 +38,25 @@ The login page let's you acces to the signup page by clicking on the `Pas encore
 
 ### Offer page
 
+![Offer page](./src/assets/images-readMe/offer.png)
+
 On this page you get all the informations about the product. You can decide to "buy" it by clicking on the `acheter` button. By doing so you get redirected to the login page if you are not connected ; if you are, it will lead you to the payment page.
 
 ### Payment page
+
+![Payment page](./src/assets/images-readMe/payment.png)
 
 This page let's you check the price of the object and the fees. It let's you enter your card number and pay by clicking on the `pay` button.
 
 ### Publish page
 
+![Publish page](./src/assets/images-readMe/publish.png)
+
 The publish page let's you publish a product and sell it. You need to enter some informations on it, you can and pictures and decide the price.
 
 Publish you offer by clicking on `ajouter`.
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -79,14 +79,14 @@ const CheckoutForm = ({ offerId, userToken, essai }) => {
             <span className="payment-element payment-bold">Total</span>
             <span className="payment-element payment-bold">
               {" "}
-              {price + 1.2} €
+              {(price + 1.2).toFixed(2)} €
             </span>
           </div>
           <div className="payment-paragraph">
             Il ne vous reste plus qu'une étape pour vous offrir{" "}
             <span className="payment-bold">{name}</span>. Vous allez payer{" "}
-            <span className="payment-bold">{price + 1.2} € </span> (frais de
-            protection et frais de port inclus).
+            <span className="payment-bold">{(price + 1.2).toFixed(2)} € </span>{" "}
+            (frais de protection et frais de port inclus).
           </div>
         </div>
         <CardElement className="card-element" />
