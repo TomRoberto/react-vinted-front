@@ -8,7 +8,7 @@ This project is a copy of the Vinted web app's frontend.
 
 ![Home page](./src/assets/images-readMe/home_page.png)
 
-On the home page, you have all the products available. You can decide to have them ordered by increasing or decreasing price. You can also decide to search between the products based on :
+On the home page, you have all the products available for purchase. You can decide to have them ordered by increasing or decreasing price. You can also decide to search between the products based on :
 
 - Their name
 - A price range
@@ -21,20 +21,20 @@ You also have a login **`se connecter`** and a signup **`s'inscrire`** button. T
 
 ![Signup page](./src/assets/images-readMe/signup.png)
 
-This page let's you signup and request a username, email and password.
+This page lets you signup and request a username, email and password.
 
-The signup page let's you acces to the login page by clicking on the **`Tu as déjà un compte ? Connecte-toi !`** button.
+The signup page lets you acces to the login page by clicking on the **`Tu as déjà un compte ? Connecte-toi !`** button.
 
 ### Login page
 
 ![Login page](./src/assets/images-readMe/login_1.png)
 ![login page](./src/assets/images-readMe/login_2.png)
 
-The login page is eather a modal (if you get hear by clicking on the **`se connecter`**) or a normal page if you click on the **`vends tes articles`** (sell your articles) button.
+The login page is eather a modal (if you get here by clicking on the **`se connecter`** button) or a normal page if you click on the **`vends tes articles`** (sell your articles) button.
 
 It needs you email and your password to let you in.
 
-The login page let's you acces to the signup page by clicking on the **`Pas encore de compte ? inscris-toi ?`\*\*** button.
+The login page lets you acces to the signup page by clicking on the **`Pas encore de compte ? inscris-toi ?`** button.
 
 ### Offer page
 
@@ -46,13 +46,13 @@ On this page you get all the informations about the product. You can decide to "
 
 ![Payment page](./src/assets/images-readMe/payment.png)
 
-This page let's you check the price of the object and the fees. It let's you enter your card number and pay by clicking on the **`pay`** button.
+This page lets you check the price of the object and the fees. It let's you enter your card number and pay by clicking on the **`pay`** button.
 
 ### Publish page
 
 ![Publish page](./src/assets/images-readMe/publish.png)
 
-The publish page let's you publish a product and sell it. You need to enter some informations on it, you can and pictures and decide the price.
+The publish page lets you publish a product and sell it. You need to enter some informations on it, you can add pictures and decide the price.
 
 Publish you offer by clicking on **`ajouter`**.
 
