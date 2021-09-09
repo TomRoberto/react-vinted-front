@@ -16,6 +16,24 @@ import ModalLogin from "./components/ModalLogin";
 import Publish from "./containers/Publish";
 import Payment from "./containers/Payment";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faUserPlus,
+  faSignInAlt,
+  faTshirt,
+  faArrowCircleUp,
+  faArrowCircleDown,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(
+  faUserPlus,
+  faSignInAlt,
+  faTshirt,
+  faArrowCircleUp,
+  faArrowCircleDown,
+  faSignOutAlt
+);
+
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   const [userId, setUserId] = useState(Cookies.get("userId") || null);
